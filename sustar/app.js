@@ -11,6 +11,12 @@ var users = require('./routes/users');
 var search = require('./routes/search');
 var zhong = require('./routes/zhong');
 var quit = require('./routes/quit');
+var find = require('./routes/find');
+var reset = require('./routes/reset');
+var findsussess = require('./routes/findsussess');
+var info = require('./routes/info');
+var tag = require('./routes/tag');
+var question = require('./routes/question');
 
 var app = express();
 
@@ -42,6 +48,13 @@ app.use('/users', users);
 app.use('/search', search);
 app.use('/zhong', zhong);
 app.use('/quit', quit);
+app.use('/find', find);
+app.use('/reset', reset);
+app.use('/findsussess', findsussess);
+app.use('/info', info);
+app.use('/tag', tag);
+app.use('/question', question);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

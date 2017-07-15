@@ -23,6 +23,7 @@ app.set('port', port);
 var server = http.createServer(app);
 var io = require('socket.io')(server);
 var db = require('../db/users.js');
+var tagdb = require('../db/tag.js');
 
 io.on("connection", function(socket){
   console.log("123");
@@ -58,6 +59,14 @@ io.on("connection", function(socket){
       };
     });
   });
+  socket.on('tagDescribe', function(data){
+  // console.log(data.tag);
+  tagdb.tags.findOne({tag:data.tag}, function(err, doc){
+    if(err) console.log(err);
+    // console.log(doc);
+    io.emit('tagDescribe1',{des:doc.describe, issuesnum:doc.issuesnum});
+  });
+});
 });
 /**
  * Listen on provided port, on all network interfaces.

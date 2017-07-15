@@ -14,15 +14,17 @@ let userShema = Schema({
   uid: {type: String},
   password: {type: String},
   nick: {type: String},
-  // focusperson: {type: Array},
-  // answerid: {type: Array},
-  // state: {type: String},
-  // tag: {type: Array},
-  // questionview: {type: Number},
-  // questiondate: {type: Date},
-  // praise: {type: Number},
-  // code: {type: String},
-  // lastdate: {type: Date},
+  prestige: Number,
+  follow: Number,
+  Collection: Number,
+  Praise:Number,
+  address:String,
+  School:String,
+  company:String,
+  Website:String,
+  jianjie:String,
+  skill:String,
+  project:String
 });
 
 module.exports.udb = mongoose.model('users', userShema);

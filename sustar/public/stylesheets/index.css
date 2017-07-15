@@ -497,3 +497,12 @@ a:hover, a:focus {
 .widget-box ol li {
   list-style: upper-roman;
 }
+.index-right-box{
+  float: right;
+  width: 240px;
+}
+@media screen and (max-width: 992px) {
+  .index-right-box{
+    display: none;
+  }
+}
